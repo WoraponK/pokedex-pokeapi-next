@@ -11,10 +11,11 @@ import CardModel from './components/CardModel'
 
 const Home = () => {
   const [pokemons, setPokemons] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchPokemons = async () => {
     try {
+      setIsLoading(true);
       const response = await axios.get('https://pokeapi.co/api/v2/pokemon');
       setPokemons(response.data.results);
     } catch (error) {
