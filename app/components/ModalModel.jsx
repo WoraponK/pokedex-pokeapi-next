@@ -13,7 +13,7 @@ const ModalModel = ({ urlPokemon, isModal, setIsModal }) => {
     const fetchPokemonDetails = async (url) => {
         try {
             setIsLoading(true);
-            const response = await axios.get(`${urlPokemon}`);
+            const response = await axios.get(`${url}`);
             setPokemonDetails(response.data);
         } catch (error) {
             console.error('Something went wrong,', error);
